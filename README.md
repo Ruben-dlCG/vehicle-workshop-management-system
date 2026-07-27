@@ -1,8 +1,8 @@
-# car-workshop-management-system
+# vehicle-workshop-management-system
 A robust internal management system engineered to streamline car workshop logistics—from customer intake to final invoicing. Focus on modular design and separation of concerns. This is a self-driven, architectural exploration project designed to meet production-grade standards and real-world business requirements.
 
 ## 🛠️ Tools
-Java 25 (OOP), Spring ecosystem, Thymeleaf, JUnit & MockMvc (applying ISTQB principles for testing), PostgreSQL, Docker & AWS (for deployment and scalability).
+Java 21, Spring ecosystem, Thymeleaf, JUnit & MockMvc (applying ISTQB principles for testing), PostgreSQL, Docker & AWS (for deployment and scalability).
 
 ## 🧭 Current Focus (Summer 2026, MVP)
   - **Layered Architecture**: Enforcing strict separation of concerns by organizing the backend into distinct Controller, Service, and Data layers.
