@@ -11,6 +11,11 @@ This application is intended to:
   - Create a more agile, productive, consistent and, overall, simplified workflow environment.
   - Allow professionals to spend more time focusing on their actual valuable work, rather than working on unnecessary, repetitive tasks to reduce mental clutter.
 
+## 🎯 Target Audience & Adaptability
+To truly streamline workshop operations, the application must adapt seamlessly to businesses at different stages of growth:
+  - **The Independent Shop (Low Headcount):** Provides maximum operational speed and flexibility (e.g., same-rank reviews) to help small teams and owner-operators keep bays moving.
+  - **The Growing & Established Shop:** Unlocks strict quality control rails, requiring multi-tier peer reviews and structured delegation tools as the workforce expands and oversight becomes mandatory.
+
 ## ❌ Non-Goals
 Conversely, this application is **not** intended to:
   - Replace dedicated accounting software.
