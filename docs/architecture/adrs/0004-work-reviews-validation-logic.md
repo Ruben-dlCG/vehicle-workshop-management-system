@@ -29,3 +29,17 @@ To ensure this validation logic scales cleanly across the planned deployment pha
 - **Phase 2 (Cloud Distributed):**
     - **Dual-Layer Validation:** The validation logic must be written symmetrically on both the frontend client applications (to ensure instant UI feedback) and inside the AWS ECS REST Controllers. The server must explicitly re-validate all payloads to prevent client-side bypasses.
     - **Offline Sync Conflict Strategy:** Because the mobile app will utilize a local SQLite database for offline operations, workshop configuration settings linked to the device may become stale. The AWS Offline Sync Engine must mandate that all incoming offline reviews are re-validated against the current cloud state of the workshop settings inside Amazon RDS at the exact time of synchronization. If a conflict occurs due to a change in strict/relaxed mode permissions while offline, the cloud server's ruleset prevails.
+
+---
+
+### 🔄 Amendment - August 2026 (Refinement during Use Case Redaction)
+
+- **Status:** Approved
+
+- **Context:** During the detailed specification of core shop floor use cases (specifically UC-04 and UC-06), I realized that executing work reviews at a macro "Order" level introduces severe database locking bottlenecks and fails to capture fluid floor concurrency. Additionally, item categorization rules required flexibility to prevent administrative deadlocks in workshops with smaller headcounts.
+
+- **Refined Decisions:**
+  1. **Task-Level Finalization Matrix:** Work reviews are officially executed down at the atomic execution tier (`job_line`) and evaluated contextually at the task scope tier (`ticket_requested_categories`). The legacy "Order" container is eliminated. A macro `Ticket` is only promoted to `READY_FOR_BILLING` when 100% of its child requested categories pass their respective review gates.
+  2. **The Objectivity Gate Toggle (`isTaskParticipationReviewAllowed`):** I have expanded the capability engine with an explicit configuration flag to assess technician team bias:
+     - *Strict Mode (Default):* The validation engine blocks a reviewer if they logged *any* row in `job_line` inside that entire task category scope to prevent collaborative blind spots.
+     - *Relaxed Mode:* Participation rules drop back to individual line-level isolation, allowing a mechanic to inspect a task scope they contributed to, provided they strictly bypass rows they personally authored.

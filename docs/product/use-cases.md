@@ -117,7 +117,7 @@ This document specifies the primary operational and transactional workflows driv
 
 ## 📝 UC-08: Amend Administrative Ticket Notes
 - **Primary Actor:** Service Advisor / Administrator.
-- **Preconditions:** A macro `ticket` exists in an active state (`OPEN`, `IN_PROGRESS`, `READY_FOR_BILLING`).
+- **Preconditions:** A macro `ticket` exists in an active state (`OPEN`, `READY_FOR_BILLING`).
 - **Main Success Scenario (Flow):**
     1. The Service Advisor opens the active ticket management panel on their terminal.
     2. The Service Advisor edits the internal text string within the `advisor_notes` form field.

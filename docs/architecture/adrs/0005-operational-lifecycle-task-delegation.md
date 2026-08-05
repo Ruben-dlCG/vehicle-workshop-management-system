@@ -1,5 +1,10 @@
 # ADR 5: Ticket Operational Lifecycle & Task Delegation
 
+> ⚠️ **STATUS: SUPERSEDED**  
+> This decision record has been officially invalidated and superseded by **[ADR 07: Ticket Operational Lifecycle and Entity Refactoring](./0007-lifecycle-entity-refactoring.md)** due to the complete removal of the intermediate Order domain model. Retained strictly for chronological historical context.
+
+---
+
 ## ℹ️ Context
 The system must support complex vehicle repairs where multiple faults require intervention from different specialists simultaneously. To prevent invoice fragmentation and preserve traceability, a vehicle visit must map to a strict single financial pipeline (**1 Ticket → 1 Order → 1 Invoice**). 
 
